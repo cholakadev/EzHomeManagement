@@ -5,6 +5,18 @@ VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzHomeManagement.API", "EzHomeManagement.API\EzHomeManagement.API.csproj", "{AA9AFC89-7BE6-4D34-81D6-7DA0B0D908A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzHomeManagement.Data", "EzHomeManagement.Data\EzHomeManagement.Data.csproj", "{05B0F2A5-A721-4E6E-8120-F378C0FCD34A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzHomeManagement.Data.Abstraction", "EzHomeManagement.Data.Abstraction\EzHomeManagement.Data.Abstraction.csproj", "{8D0AC114-7780-4450-B2E9-D671C52FBCFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzHomeManagement.Data.Models", "EzHomeManagement.Data.Models\EzHomeManagement.Data.Models.csproj", "{2E57606D-B0FE-403D-B4BE-44BAF145E2CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzHomeManagement.Business", "EzHomeManagement.Business\EzHomeManagement.Business.csproj", "{C8A99C75-DD71-4063-9289-25BA37FE5571}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzHomeManagement.Business.Abstraction", "EzHomeManagement.Business.Abstraction\EzHomeManagement.Business.Abstraction.csproj", "{68B208DF-5AD2-4186-A33D-133F0897F41C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzHomeManagement.Business.Models", "EzHomeManagement.Business.Models\EzHomeManagement.Business.Models.csproj", "{006746BC-182E-49D1-B9E7-BF26CA5607EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{AA9AFC89-7BE6-4D34-81D6-7DA0B0D908A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA9AFC89-7BE6-4D34-81D6-7DA0B0D908A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA9AFC89-7BE6-4D34-81D6-7DA0B0D908A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05B0F2A5-A721-4E6E-8120-F378C0FCD34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B0F2A5-A721-4E6E-8120-F378C0FCD34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B0F2A5-A721-4E6E-8120-F378C0FCD34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B0F2A5-A721-4E6E-8120-F378C0FCD34A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D0AC114-7780-4450-B2E9-D671C52FBCFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D0AC114-7780-4450-B2E9-D671C52FBCFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D0AC114-7780-4450-B2E9-D671C52FBCFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D0AC114-7780-4450-B2E9-D671C52FBCFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E57606D-B0FE-403D-B4BE-44BAF145E2CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E57606D-B0FE-403D-B4BE-44BAF145E2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E57606D-B0FE-403D-B4BE-44BAF145E2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E57606D-B0FE-403D-B4BE-44BAF145E2CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A99C75-DD71-4063-9289-25BA37FE5571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A99C75-DD71-4063-9289-25BA37FE5571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A99C75-DD71-4063-9289-25BA37FE5571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A99C75-DD71-4063-9289-25BA37FE5571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68B208DF-5AD2-4186-A33D-133F0897F41C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68B208DF-5AD2-4186-A33D-133F0897F41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68B208DF-5AD2-4186-A33D-133F0897F41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68B208DF-5AD2-4186-A33D-133F0897F41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{006746BC-182E-49D1-B9E7-BF26CA5607EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006746BC-182E-49D1-B9E7-BF26CA5607EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006746BC-182E-49D1-B9E7-BF26CA5607EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006746BC-182E-49D1-B9E7-BF26CA5607EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
