@@ -1,5 +1,6 @@
 ﻿namespace EzHomeManagement.Data
 {
+    using EzHomeManagement.Data.Configuration;
     using EzHomeManagement.Data.Models.EntityModels;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
@@ -10,9 +11,12 @@
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(UserEntityConfiguration).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(EntranceEntityConfiguration).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApartmentEntityConfiguration).Assembly);
         }
     }
 }
