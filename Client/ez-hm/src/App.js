@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 import Container from './components/Layout/Container';
 import Header from './components/Layout/Header';
-import LastestNews from './components/News/LatestNews';
-import Card from './components/UI/Card';
+import Input from './components/UI/Input';
 
 const DUMMY_DATA = [
   {
@@ -31,7 +30,7 @@ const DUMMY_DATA = [
     date: new Date(2022, 7, 20)
   },
   {
-    id: 2,
+    id: 4,
     title: 'Free parkspace',
     content: 'Since we will be out of the town for 20 days, our parking space is free and can be used until 21/09/2022 22:00 PM.',
     author: 'Georgi Cholakov',
@@ -45,13 +44,7 @@ function App() {
     <React.Fragment>
       <Header />
       <Container>
-        <div className='inner-container'>
-          <div className='side-section'>
-            <Card>
-              <LastestNews latestNews={DUMMY_DATA} />
-            </Card>
-          </div>
-        </div>
+        <Input type='text' label='Apartment' />
       </Container>
     </React.Fragment>
   );
