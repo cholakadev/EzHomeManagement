@@ -1,0 +1,8 @@
+.latest-news {
+    list-style-type: none;
+    padding: 0;
+}
+
+.latest-news li {
+    margin: 20px 0;
+}
