@@ -1,3 +1,16 @@
-.container {
-    margin-top: 4rem;
+.side-section {
+    max-width: 25rem;
+}
+
+.inner-container {
+    margin: 20px 0;
+}
+
+.side-section-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-section-items li {
+    margin: 20px 0;
 }

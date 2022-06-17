@@ -1,0 +1,7 @@
+.news-date__container {
+    display: flex;
+  }
+  
+  .news-date {
+    font-size: 0.6rem;
+  }
