@@ -1,0 +1,10 @@
+.container {
+    width:100%;
+    min-height: calc(100% - 4rem);
+    position: absolute;
+    top: 4rem;
+    padding: 0 8%;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
