@@ -8,7 +8,7 @@
         /// Auto generated unique entrance code. 
         /// It is usable when a user wants to register to connect to the same entrance.
         /// </summary>
-        public string? Code { get; private set; }
+        public string Code { get; private set; } = string.Empty;
         [Required]
         public string Number { get; set; }
         [Required]
