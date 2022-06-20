@@ -1,4 +1,3 @@
-using EzHomeManagement.API.Utility;
 using EzHomeManagement.Data;
 using Microsoft.EntityFrameworkCore;
 
