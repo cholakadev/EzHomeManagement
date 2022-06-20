@@ -1,3 +1,5 @@
+using EzHomeManagement.Business.Abstraction;
+using EzHomeManagement.Business.AuthServicePack;
 using EzHomeManagement.Data;
 using EzHomeManagement.Data.Abstraction;
 using EzHomeManagement.Data.Repositories;
@@ -6,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options
         .UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]),
