@@ -4,6 +4,6 @@
     using FluentResult;
     public interface IAuthService
     {
-        Task<Result<bool>> Register(RegisterEntranceModel registerEntranceModel);
+        Task<Result<string>> RegisterEntrance(RegisterEntranceModel registerEntranceModel);
     }
 }
