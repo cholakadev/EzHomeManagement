@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ResultFluent" Version="1.0.5" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\EzHomeManagement.Business.Abstraction\EzHomeManagement.Business.Abstraction.csproj" />
     <ProjectReference Include="..\EzHomeManagement.Data.Abstraction\EzHomeManagement.Data.Abstraction.csproj" />
   </ItemGroup>
