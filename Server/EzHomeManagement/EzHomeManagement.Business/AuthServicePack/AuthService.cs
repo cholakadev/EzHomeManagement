@@ -2,7 +2,10 @@
 {
     using AutoMapper;
     using EzHomeManagement.Business.Abstraction;
+    using EzHomeManagement.Business.Extensions;
+    using EzHomeManagement.Business.Factories;
     using EzHomeManagement.Business.Models.Auth.Entrance;
+    using EzHomeManagement.Business.Models.Auth.User;
     using EzHomeManagement.Data.Abstraction;
     using EzHomeManagement.Data.Models.EntityModels;
     using FluentResult;
@@ -10,18 +13,24 @@
 
     public class AuthService : IAuthService
     {
-        private readonly IRepository<Entrance> _entranceBaseRepository;
-        private readonly IEntranceRepository _entranceRepository;
         private readonly IMapper _mapper;
+        private readonly IEntranceRepository _entranceRepository;
+        private readonly IUserRepository _userRepository;
+        private readonly IRepository<Entrance> _entranceBaseRepository;
+        private readonly IRepository<User> _userBaseRepository;
 
         public AuthService(
+            IMapper mapper,
+            IEntranceRepository entranceRepository,
+            IUserRepository userRepository, 
             IRepository<Entrance> entranceBaseRepository,
-            IEntranceRepository entranceRepository, 
-            IMapper mapper)
+            IRepository<User> userBaseRepository)
         {
-            this._entranceBaseRepository = entranceBaseRepository;
-            this._entranceRepository = entranceRepository;
             this._mapper = mapper;
+            this._entranceRepository = entranceRepository;
+            this._userRepository = userRepository;
+            this._entranceBaseRepository = entranceBaseRepository;
+            this._userBaseRepository = userBaseRepository;
         }
 
         public Task<Result<string>> RegisterEntrance(RegisterEntranceModel registerEntranceModel)
@@ -42,7 +51,26 @@
                 })
                 .MapAsync(unique => this._mapper.Map<Entrance>(registerEntranceModel))
                 .MapAsync(entrance => this._entranceBaseRepository.Add(entrance))
+                .ValidateAsync(entrance => entrance != null, ResultComplete.OperationFailed, "Entrance registration failed")
                 .MapAsync(entrance => entrance.Code);
+        }
+
+        public Task<Result<UserModel>> RegisterUser(RegisterUserModel registerUserModel)
+        {
+            return Result
+                .Create(registerUserModel)
+                .MapAsync(registerUserModel => this._userRepository.GetUserByEmailAsync(registerUserModel.Email))
+                .ValidateAsync(user => user == null, ResultComplete.Conflict, "User with the same email is already registered")
+                .MapAsync(user =>
+                {
+                    var mappedUser = this._mapper.Map<User>(registerUserModel);
+                    var passwordHash = registerUserModel.Password.EncryptString(registerUserModel.PasswordSalt);
+                    mappedUser.PasswordHash = passwordHash;
+
+                    return mappedUser;
+                })
+                .MapAsync(user => this._userBaseRepository.Add(user))
+                .MapAsync(UserFactory.ToModel);
         }
     }
 }
