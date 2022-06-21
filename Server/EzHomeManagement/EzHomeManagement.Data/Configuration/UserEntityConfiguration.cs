@@ -13,6 +13,15 @@
                 .HasKey(u => u.Id);
 
             builder
+                .Ignore(u => u.UserName)
+                .Ignore(u => u.NormalizedUserName)
+                .Ignore(u => u.SecurityStamp)
+                .Ignore(u => u.PhoneNumberConfirmed)
+                .Ignore(u => u.TwoFactorEnabled)
+                .Ignore(u => u.LockoutEnd)
+                .Ignore(u => u.LockoutEnabled);
+
+            builder
                 .Property(u => u.Email)
                 .IsRequired()
                 .HasMaxLength(128);
@@ -30,7 +39,7 @@
                .HasMaxLength(32);
 
             builder
-                .Property(u => u.Password)
+                .Property(u => u.PasswordHash)
                 .IsRequired()
                 .HasMaxLength(512);
 
