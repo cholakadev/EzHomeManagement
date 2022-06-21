@@ -24,4 +24,8 @@
     <ProjectReference Include="..\EzHomeManagement.Data.Abstraction\EzHomeManagement.Data.Abstraction.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>
