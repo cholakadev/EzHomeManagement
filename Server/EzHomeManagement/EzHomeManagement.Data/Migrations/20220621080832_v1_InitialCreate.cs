@@ -45,27 +45,19 @@ namespace EzHomeManagement.Data.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(32)", maxLength: 32, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(32)", maxLength: 32, nullable: true),
                     PasswordSalt = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
                     IsOwner = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
                     IsLessee = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    AccommodationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LeaveDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsCurrentResident = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
-                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    AccommodationDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LeaveDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsCurrentResident = table.Column<bool>(type: "bit", nullable: true, defaultValue: true),
                     NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PasswordHash = table.Column<string>(type: "nvarchar(512)", maxLength: 512, nullable: false),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
-                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
                     AccessFailedCount = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -259,13 +251,6 @@ namespace EzHomeManagement.Data.Migrations
                 name: "EmailIndex",
                 table: "User",
                 column: "NormalizedEmail");
-
-            migrationBuilder.CreateIndex(
-                name: "UserNameIndex",
-                table: "User",
-                column: "NormalizedUserName",
-                unique: true,
-                filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserApartment_ApartmentId",
